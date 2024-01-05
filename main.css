@@ -1,0 +1,112 @@
+body {
+  animation: toNight 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  justify-content: center;
+  display: flex;
+  height: 200vh;
+  align-items: center;
+  transition: 1s ease;
+}
+
+.sun-moon {
+  transition: 1s ease;
+  animation: sunToMoon 1s linear infinite;
+  animation-play-state: paused;
+  box-shadow: #ffd700 0px 0px 157px 23px;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background-color: #ffd700;
+  position: fixed;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+}
+
+.sun-rays {
+  position: fixed;
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 275px;
+  width: 275px;
+  left: calc(50% - 137.5px);
+  top: calc(50% - 137.5px);
+}
+
+.line {
+  animation: sunToMoon 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  position: absolute;
+  width: 100%;
+  border-radius: 5px;
+  height: 10px;
+  background-color: rgb(245, 245, 35);
+}
+
+.line:nth-child(1) {
+  transform: rotate(22.5deg);
+}
+
+.line:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.line:nth-child(3) {
+  transform: rotate(67.5deg);
+}
+
+.line:nth-child(4) {
+  transform: rotate(90deg);
+}
+
+.line:nth-child(5) {
+  transform: rotate(112.5deg);
+}
+
+.line:nth-child(6) {
+  transform: rotate(135deg);
+}
+.line:nth-child(7) {
+  transform: rotate(157.5deg);
+}
+.line:nth-child(8) {
+  transform: rotate(180deg);
+}
+
+@keyframes sunToMoon {
+  to {
+    background: #f0f0f0;
+    box-shadow: rgb(223, 223, 217) 0px 0px 90px 0px;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+    width: 200px;
+    height: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+  }
+}
+
+@keyframes toNight {
+  to {
+    background-color: rgb(17, 10, 37);
+  }
+}
